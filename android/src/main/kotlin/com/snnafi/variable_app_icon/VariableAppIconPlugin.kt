@@ -56,7 +56,7 @@ class VariableAppIconPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
     this.activity = binding.activity as Activity
     channel = MethodChannel(binaryMessenger!!, "variable_app_icon")
-    channel.setMethodCallHandler(this)
+    channel?.setMethodCallHandler(this)
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
